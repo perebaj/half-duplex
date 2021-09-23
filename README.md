@@ -46,8 +46,6 @@ A comunicação é baseada em duas portas que indicam se aquele módulo arduino 
 
 OBS: Todos os Arduino podem receber e enviar dados, como se estivessem em uma rede real, conectados por um barramento simuntâneo, mas o que vai definir se a informação chegará para os elementos na rede é a configuração do que chamaremos de **chave dados: DE e DD ou RE e RD (D = Driver | R = Receiver)**. Que podem estar nas configuração Enable ou Disable.
 
-## Problemas encontrados na implementação
-
 ****
 
 ![Untitled](images/Untitled%202.png)
