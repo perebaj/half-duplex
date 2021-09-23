@@ -53,26 +53,30 @@ OBS: Todos os Arduino podem receber e enviar dados, como se estivessem em uma re
 ## Driver
 
 ```cpp
-// C++ code
 //3 read | 2 drive
-int incoming = 0;
-String received;
-void setup()
-{
+int incomingByte = 0; 
+
+void setup() {
   Serial.begin(9600);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
-
 }
 
-void loop()
-{
-  digitalWrite(3, HIGH);
-  if (Serial.available() > 0){
-  	incoming = Serial.read();
-    Serial.write(incoming);
+void loop() {
+  digitalWrite(3, LOW);
+  if (Serial.available() > 0) {
+    incomingByte = Serial.read();
+
+    Serial.write(incomingByte);
   }
 
+  digitalWrite(2, HIGH);
+  Serial.write("Com pino 2 HIGH\n");
+  delay(1000);
+
+  digitalWrite(2, LOW);
+  Serial.write("Com pino 2 LOW\n");
+  delay(1000);
 }
 ```
 
